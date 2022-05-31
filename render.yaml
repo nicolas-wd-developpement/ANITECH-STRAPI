@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: strapi
+    name: ANITECH-FRONTEND
     env: node
     plan: starter
     buildCommand: yarn install && yarn build
@@ -8,7 +8,7 @@ services:
     healthCheckPath: /_health
     disk:
       name: strapi-uploads
-      mountPath: dist
+      mountPath: 
       sizeGB: 1
     envVars:
       - key: NODE_VERSION
@@ -17,7 +17,7 @@ services:
         value: production
       - key: DATABASE_URL
         fromDatabase:
-          name: strapi
+          name: anitech_database
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
@@ -29,5 +29,5 @@ services:
         generateValue: true
 
 databases:
-  - name: strapi
+  - name: anitech_database
     plan: starter

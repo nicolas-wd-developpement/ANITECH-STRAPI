@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "breed": {
+      "type": "string"
+    },
+    "tagnumber": {
+      "type": "string"
+    },
+    "tagId": {
+      "type": "uid",
+      "targetField": "tagnumber"
+    }
+  }
+}

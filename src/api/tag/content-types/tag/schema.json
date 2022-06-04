@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tag",
     "pluralName": "tags",
-    "displayName": "Tag"
+    "displayName": "Tag",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,15 @@
       "type": "password"
     },
     "picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "breed": {
       "type": "string"
@@ -42,6 +44,21 @@
     "tagId": {
       "type": "uid",
       "targetField": "tagnumber"
+    },
+    "photo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::photo.photo",
+      "inversedBy": "tag"
+    },
+    "oderid": {
+      "type": "string"
+    },
+    "amazon_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::amazon-order.amazon-order",
+      "inversedBy": "tag"
     }
   }
 }

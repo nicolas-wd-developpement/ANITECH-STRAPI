@@ -53,12 +53,6 @@
     },
     "oderid": {
       "type": "string"
-    },
-    "amazon_order": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::amazon-order.amazon-order",
-      "inversedBy": "tag"
     }
   }
 }
